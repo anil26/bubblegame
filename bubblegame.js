@@ -1,4 +1,5 @@
-var ARROW_TIME = 10;
+function game(){
+    var ARROW_TIME = 10;
 
 var intervalar = null;
 var flag = 0;
@@ -129,3 +130,22 @@ function createbubbles() {
 var intervalid4 = setInterval(function () {
     createbubbles();
 }, 1000);
+}
+
+function init(t)
+{
+    game();
+    var t1=60000*t;
+    var intervalgame=setInterval(function(){
+        console.log("enetered init");
+        if(t<0)
+        {
+                document.getElementById("1").innerHTML=" ";
+                clearInterval(intervalgame);
+                return;
+        }
+        console.log("value of t:->"+ t1);
+        t1-=1000;
+    },1000);
+}
+init(1);
